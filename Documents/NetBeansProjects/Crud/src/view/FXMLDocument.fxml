@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="544.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+   <children>
+      <Label layoutX="20.0" layoutY="14.0" prefHeight="28.0" prefWidth="54.0" text="CRUD" textFill="#19da00">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="34.0" prefHeight="17.0" prefWidth="319.0" text="-----------------------------------------------------------------" textFill="#35ff07" />
+      
+      <TextField fx:id="txtNome" alignment="CENTER" layoutX="161.0" layoutY="62.0" prefHeight="25.0" prefWidth="157.0" promptText="Nome" />
+      <TextField fx:id="txtEmail" alignment="CENTER" layoutX="161.0" layoutY="93.0" prefHeight="25.0" prefWidth="157.0" promptText="Email" />
+      <TextField fx:id="txtLogin" alignment="CENTER" layoutX="161.0" layoutY="124.0" prefHeight="25.0" prefWidth="157.0" promptText="Login" />
+      <PasswordField fx:id="txtSenha" alignment="CENTER" layoutX="161.0" layoutY="155.0" prefHeight="25.0" prefWidth="157.0" promptText="Senha" />
+      
+      <Button fx:id="btnEnviar" alignment="CENTER" layoutX="161.0" layoutY="190.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="34.0" prefWidth="157.0" text="Cadastrar Usuário" textFill="#28b22f">
+         <font>
+            <Font name="Bell MT" size="15.0" />
+         </font>
+      </Button>
+      
+      <Button fx:id="btnMostrar" layoutX="161.0" layoutY="234.0" mnemonicParsing="false" onAction="#mostrarUsuarios" prefHeight="34.0" prefWidth="157.0" text="Visualizar Usuários" textFill="#28b22f" />
+      <Button fx:id="btnAtualizar" layoutX="161.0" layoutY="280.0" mnemonicParsing="false" onAction="#atualizarSelecionado" prefHeight="34.0" prefWidth="157.0" text="Atualizar Dados" textFill="#28b22f" />
+      <Button fx:id="btnDeletar" layoutX="161.0" layoutY="324.0" mnemonicParsing="false" onAction="#deletarUsuarioSelecionado" prefHeight="34.0" prefWidth="157.0" text="Deletar Selecionado" textFill="#28b22f" />
+      
+      <TableView fx:id="tblUsuarios" layoutX="20.0" layoutY="373.0" onMouseClicked="#carregarCampos" prefHeight="149.0" prefWidth="308.0">
+         <columns>
+            <TableColumn fx:id="colNome" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="colEmail" prefWidth="90.0" text="Email" />
+            <TableColumn fx:id="colLogin" prefWidth="70.0" text="Login" />
+            <TableColumn fx:id="colSenha" prefWidth="70.0" text="Senha" />
+         </columns>
+      </TableView>
+      
+      <HBox layoutX="14.0" layoutY="62.0" prefHeight="299.0" prefWidth="122.0">
+         <children>
+            <ImageView fitHeight="299.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
